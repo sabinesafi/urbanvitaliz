@@ -1,0 +1,37 @@
+---
+---
+
+
+.hero__container {
+    h1 {
+        text-align: center;
+    }
+}
+
+.article-grey {
+    background-color: var(--theme-background-grey);
+}
+
+.footer__logo img {
+    width: 120px;
+    min-height: 8em;
+}
+
+.navbar__home {
+    height: 150px;
+
+}
+
+.navbar__logo_right {
+    height: 34px;
+}
+
+@media (max-width: 565px) {
+    .navbar__home {
+        flex-direction: column;
+    }
+
+    .navbar__container {
+        align-items: center;
+    }
+}
