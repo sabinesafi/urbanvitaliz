@@ -5,7 +5,7 @@ layout: default
 <h1><span class="label label-info">{{ page.type }}</span></h1>
 
 <div class="row justify-content-start">
-        <div class="col-sm-4">
+        <div class="col-4">
             <div class="panel panel-info">
                         <div class="panel-heading">
                           <h3 class="panel-title">{{page.nom}}</h3>
@@ -15,10 +15,13 @@ layout: default
                           <a href="{{ page.url }}">Leur site web</a>
                         </div>
             </div>
-        </div><!-- /.col-sm-4 -->
+        </div><!-- /.col-4 -->
 </div>
 
-<h4> Zone d'intervention </h4>
+<div class="page-header">
+    <h4> Zone d'intervention </h4>
+</div>
+
 <iframe width="50%" height="300px" frameborder="0" 
         src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_487352?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false">
 </iframe>
