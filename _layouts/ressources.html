@@ -4,13 +4,16 @@ layout: default
 
 <h1><span class="label label-info">{{ page.type }}</span></h1>
 
-<div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">{{page.nom}}</h3>
+<div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-info">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">{{page.nom}}</h3>
+                        </div>
+                        <div class="panel-body">
+                          {{ content }}
+                          <a href="{{ page.url }}">Leur site web</a>
+                        </div>
             </div>
-            <div class="panel-body">
-              {{ content }}
-              <a href="{{ page.url }}">Leur site web</a>
-            </div>
+        </div><!-- /.col-sm-4 -->
 </div>
-
