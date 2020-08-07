@@ -3,7 +3,7 @@ layout: ressources
 
 nom: EPF
 type: appui ingénierie-financement
-url: http://www.epf-npdc.fr/
+adresse_url: http://www.epf-npdc.fr/
 zone: Nord
 ---
 
