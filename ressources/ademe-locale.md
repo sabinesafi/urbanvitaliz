@@ -3,7 +3,8 @@ layout: ressources
 
 nom: ADEME locale
 type: appui ingénierie-financement
-url: https://hauts-de-france.ademe.fr/
+adresse_url: https://hauts-de-france.ademe.fr/
+zone: région centre
 ---
 
 L'ADEME, c'est **magique** !
