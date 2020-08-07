@@ -1,31 +1,21 @@
 ---
 layout: default
 ---
-  <!-- Bootstrap core CSS -->
-  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap theme -->
-  <link href="../../dist/css/bootstrap-theme.min.css" rel="stylesheet">
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 <span class="label label-info">{{ page.type }}</span>
-<span class="label label-default">Default</span>
 
-<h1>Ceci est la ressource <strong>{{page.nom}}</strong></h1>
 
-<h2>Cette ressource est de type {{ page.type }}</h2>
-
-{{ content }}
 
 <a href="{{ page.url }}">Leur site web</a>
 
 
 <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel title</h3>
+              <h3 class="panel-title">{{page.nom}}</h3>
             </div>
             <div class="panel-body">
-              Panel content
+              {{ content }}
+              <a href="{{ page.url }}">Leur site web</a>
             </div>
 </div>
 
