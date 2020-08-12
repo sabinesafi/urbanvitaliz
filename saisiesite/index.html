@@ -11,6 +11,7 @@ layout: default
 </section>
 
 <section>
+<br>
 <form>
   <div class="form-group">
     <label for="nom_site">Nom du site</label>
@@ -24,15 +25,25 @@ layout: default
     <label for="adresse_site">Adresse du site</label>
     <textarea class="form-control" id="adresse_site" rows="3"></textarea>
   </div>
-  <div class="form-group">
-    <label for="exampleFormControlSelect2">Example multiple select</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+    <div class="form-group">
+    <label for="proprietaire_site">Propriétaire actuel</label>
+    <textarea class="form-control" id="proprietaire_site" rows="1"></textarea>
+  </div></div>
+    <div class="form-group">
+    <label for="occupant_site">Occupant actuel</label>
+    <textarea class="form-control" id="occupant_site" rows="1"></textarea>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="Projet" id="projet_identifie" value="option1" checked>
+    <label class="form-check-label" for="projet_identifie">
+      Projet identifié en cours
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="Projet" id="projet_absent" value="option2" checked>
+    <label class="form-check-label" for="projet_absent">
+      Absence de projet en cours
+    </label>
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Example textarea</label>
