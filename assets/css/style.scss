@@ -1,6 +1,8 @@
----
----
+--- 
+--- 
 
+
+@import 'ressource-layout.scss';
 
 .hero__container {
     h1 {
@@ -22,10 +24,6 @@
 
 }
 
-.navbar__logo_right {
-    height: 34px;
-}
-
 @media (max-width: 565px) {
     .navbar__home {
         flex-direction: column;
@@ -35,3 +33,5 @@
         align-items: center;
     }
 }
+
+

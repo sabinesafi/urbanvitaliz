@@ -10,3 +10,6 @@ plugins:
 
 optional_front_matter:
   remove_originals: true
+
+sass:
+    sass_dir: assets/css
