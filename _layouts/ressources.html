@@ -2,27 +2,22 @@
 layout: default
 ---
 
-<section class="ressource section article article__full">
-  <div class="article__content">
-    <div class="article__container">
-      <h1>{{page.nom}}</h1>
 
-      <h3><span class="label label-info">{{ page.type }}</span></h3>
+<h1>{{page.nom}}</h1>
 
-      <div class="panel panel-info">
-        <div class="panel-body">
-          {{ content }}
-          <a href="{{ page.adresse_url }}">Site web</a>
-        </div>
-      </div>
+<h3><span class="label label-info">{{ page.type }}</span></h3>
 
-      <div class="page-header">
-        <h4> Zone d'intervention : <strong>{{ page.zone }}</strong></h4>
-      </div>
-
-      <iframe frameborder="0"
-        src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_487352?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false">
-      </iframe>
-    </div>
+<div class="panel panel-info">
+  <div class="panel-body">
+    {{ content }}
+    <a href="{{ page.adresse_url }}">Site web</a>
   </div>
-</section>
+</div>
+
+<div class="page-header">
+  <h4> Zone d'intervention : <strong>{{ page.zone }}</strong></h4>
+</div>
+
+<iframe frameborder="0"
+  src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_487352?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false">
+</iframe>

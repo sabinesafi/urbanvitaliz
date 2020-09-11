@@ -1,30 +1,24 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: "fr" }}">
 
-  {%- include head.html -%}
+{%- include head.html -%}
 
-  <body>
+<body>
 
-    {%- include header.html -%}
+  {%- include header.html -%}
 
-    {% if page.banner_title or page.banner_subtitle %}
-      <div class="hero" role="banner">
-        <div class="hero__container">
-          {% if page.banner_title %}
-          <h1>{{ page.banner_title }}</h1>
-          {% endif %}
-          {% if page.banner_subtitle %}
-          <p>{{ page.banner_subtitle }}</p>
-          {% endif %}
+  <main role="main">
+    <section class="ressource section article article__full">
+      <div class="article__content">
+        <div class="article__container">
+          {{ content }}
         </div>
       </div>
-    {% endif %}
+    </section>
+  </main>
 
-    <main role="main">
-      {{ content }}
-    </main>
+  {%- include footer.html -%}
 
-    {%- include footer.html -%}
+</body>
 
-  </body>
 </html>
