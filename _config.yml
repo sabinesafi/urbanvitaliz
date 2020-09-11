@@ -1,7 +1,13 @@
 title: UrbanVitaliz
 email: friches@beta.gouv.fr
 lang: fr
+base_url: "https://perrinerut.github.io/urbanvitaliz/"
 
 theme: jekyll-theme-minimal
+
 plugins:
   - jekyll-feed
+  - jekyll-optional-front-matter
+
+optional_front_matter:
+  remove_originals: true
