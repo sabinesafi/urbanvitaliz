@@ -20,5 +20,7 @@
     "serve": "^11.3.2",
     "svelte": "^3.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "d3-fetch": "^2.0.0"
+  }
 }

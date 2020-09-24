@@ -4,9 +4,8 @@ scripts:
       defer: true
       async: false
       crossorigin: "anonymous"
+styles:
+    - href: "./build/bundle.css"
 ---
-
-## Coucou
-test 
 
 <div class="svelte-main"></div>
