@@ -42,8 +42,22 @@
 		</section>
 		<section id="former-activity">
 			<h2>Cessation d’activité</h2>
+
+			<h3>Site IPCE</h3>
+			{descriptionFriche.IPCEStatus}
+			<h3>Vacant depuis</h3>
+			{descriptionFriche.vacantSinceDate}
+			<h3>Ancien occupant</h3>
+			{descriptionFriche.formerOccupantName}
 			<h3>Quelle est l'ancienne activité du site ?</h3>
 			{descriptionFriche.formerActivity}
+			<h3>Détails sur l'activité précédente</h3>
+			{descriptionFriche.detailedFormerActivity}
+			<h3>Site mis en sécurité</h3>
+			{descriptionFriche.safetyStatus}
+			<h3>Obligations du dernier occupant</h3>
+			{descriptionFriche.formerOperatorRequirementsFulfillmentStatus}
+
 		</section>
 	</section>
 </article>
