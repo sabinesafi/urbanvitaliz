@@ -21,6 +21,7 @@
 		<section class="tabs">
 			<a href="#occupation">Occupation actuelle et propriété sur le site</a>
 			<a href="#former-activity">Cessation d’activité</a>
+			<a href="#artificialisation-archéologie">Nature de l'artificialisation et archéologie</a>																																																																																																																																																																																																			
 		</section>
 	</div>
 
@@ -57,6 +58,21 @@
 			{descriptionFriche.safetyStatus}
 			<h3>Obligations du dernier occupant</h3>
 			{descriptionFriche.formerOperatorRequirementsFulfillmentStatus}
+
+		</section>
+		<section id="artificialisation-archéologie">
+			<h2>Nature de l'artificialisation et archéologie</h2>
+
+			<h3>Bâti</h3>
+			{descriptionFriche.built}
+			<h3>Imperméabilisation estimée</h3>
+			{descriptionFriche.waterproofingRate}%
+			<h3>Types de sols majoritaires</h3>
+			{descriptionFriche.soilTypes}
+			<h3>Fouilles archéologiques</h3>
+			{descriptionFriche.archelogyObligation}
+			<h3>Est-ce qu'il y a déjà eu des fouilles sur ce site ?</h3>
+			{descriptionFriche.archelogyObligationStatus}
 
 		</section>
 	</section>

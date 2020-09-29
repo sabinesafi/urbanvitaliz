@@ -14,6 +14,7 @@ import DescriptionFriche from './DescriptionFriche.svelte';
 
 /**
  * @typedef {object} Friche
+ * Identification
  * @property {string} [id]
  * @property {string} name
  * @property {string} address
@@ -22,14 +23,14 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {string} [parcellesCadastrales]
  * @property {string} [perimeterDescription]
  * @property {string} [area]
- * 
+ * Occupation actuelle et propriété du site
  * @property {string} occupancy - Le site est-il occupé ? Site totalement vacant / Occupé en partie de manière temporaire / ... / Pas d'information
  * @property {string} occupancyDescription
  * @property {string} currentOccupents
  * @property {string} currentPublicOwners
  * @property {string} currentPrivateOwners
  * @property {string} ownersRelatedRights 
- * 	
+ * Cessation d'activité
  * @property {string} IPCEStatus
  * @property {string} vacantSinceDate
  * @property {string} formerOccupantName
@@ -37,6 +38,12 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {string} detailedFormerActivity
  * @property {string} safetyStatus
  * @property {string} formerOperatorRequirementsFulfillmentStatus
+ * Nature de l'artificialisation et archéologie
+ * @property {string} built
+ * @property {string} waterproofingRate
+ * @property {string} soilTypes
+ * @property {string} archelogyObligation
+ * @property {string} archelogyObligationStatus
  */
 
 /**
@@ -45,7 +52,6 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  */
 function makeFriche(csvObj){
 	return {
-		// Identification
 		name: csvObj[`Nom du site`],
 		address: csvObj[`Adresse du site`],
 		communeINSEECode: csvObj[`Code INSEE de la commune où se situe le site`],
@@ -53,14 +59,14 @@ function makeFriche(csvObj){
 		parcellesCadastrales: csvObj['Numéros des parcelles cadastrales concernées'],
 		perimeterDescription: csvObj[`Description du périmètre de la friche (en attendant qu'on vous invite à le dessiner directement !)`],
 		area: csvObj[`Une idée de la surface globale (m²) ?`],
-		// Occupation actuelle et propriété du site
+		
 		occupancy: csvObj[`Le site est-il occupé ?`],
 		occupancyDescription: csvObj[`Description libre de l'occupation éventuelle (normalement question conditionnelle)`],
 		currentOccupents: csvObj[`Nom des éventuels occupants actuels et activité`],
 		currentPublicOwners: csvObj[`Listez les propriétaires publics actuels et leurs droits`],
 		currentPrivateOwners: csvObj[`Listez les propriétaires privés actuels et leurs droits`],
 		ownersRelatedRights: csvObj[`Existe-t-il des droits liés à des propriétaires inconnus ?`],
-		// Cessation d'activité
+		
 		IPCEStatus: csvObj[`Le site est-il classé ICPE ?`],
 		vacantSinceDate: csvObj[`Le site est vacant (ou partiellement vacant) depuis l'année`],
 		formerOccupantName: csvObj[`Nom de l'ancien occupant du site`],
@@ -68,19 +74,16 @@ function makeFriche(csvObj){
 		detailedFormerActivity: csvObj[`Décrire plus finement l'ancienne activité si possible`],
 		safetyStatus: csvObj[`Le site est-il mis en sécurité ?`],
 		formerOperatorRequirementsFulfillmentStatus: csvObj[`Le dernier exploitant a-t-il été purgé de ses obligations ?`],
+		
+		built: csvObj[`Le site est-il bâti ?`],
+		waterproofingRate: csvObj[`Quel taux d'imperméabilisation des sols estimez-vous ?`],
+		soilTypes: csvObj[`Sur le site, les sols présents sont de type`],
+		archelogyObligation: csvObj[`Est-ce que le site est soumis à obligation de fouille ?`],
+		archelogyObligationStatus: csvObj[`Est-ce qu'il y a déjà eu des fouilles sur ce site ?`],
 	}
 }
 
-
-/*		
-	
-1. Le site est-il bâti ?	Bâti 
-2. Quel taux d'imperméabilisation des sols estimez-vous ?	Imperméabilisation estimée
-3. Sur le site, les sols présents sont de type	Types de sols majoritaires
-4. Est-ce que le site est soumis à obligation de fouille ?	Fouilles archéologiques
-5. Est-ce qu'il y a déjà eu des fouilles sur ce site ?	- 
-	
-	
+/*	
 1. Le bâti a-t-il un aspect patrimonial ?	Patrimoine architectural 
 2. Surface de plancher (ordre de grandeur)	Surface de plancher
 3. Nombre de niveaux	Nombre de niveaux
