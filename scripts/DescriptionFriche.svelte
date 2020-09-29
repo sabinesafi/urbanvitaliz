@@ -1,26 +1,91 @@
 
-<section class="description-friche">
+<article class="description-friche">
 	<h1>Description d'une friche</h1>
-	{#each fricheEntries as [question, answer]}
-	<h2>{question}</h2>
-	{answer}
-	{/each}
-</section>
+	
+	<div class="row">
+		<section class="identification">
+			<h2>{descriptionFriche.name}</h2>
+		</section>
+		<section class="tabs">
+			<a href="#occupation">Occupation actuelle et propriété sur le site</a>
+			<a href="#former-activity">Cessation d’activité</a>
+		</section>
+	</div>
+
+	<section class="tab-content">
+		<section id="occupation">
+			<h2>Occupation actuelle et propriété sur le site</h2>
+			<h3>Le site est-il occupé ?</h3>
+			{descriptionFriche.occupancy}
+		</section>
+		<section id="former-activity">
+			<h2>Cessation d’activité</h2>
+			<h3>Quelle est l'ancienne activité du site ?</h3>
+			{descriptionFriche.formerActivity}
+		</section>
+	</section>
+</article>
 
 <style>
-	.description-friche h2{
+	.description-friche{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	h2{
+		font-size: 2rem;
+		color: #008080;
+	}
+
+	h3{
 		font-size: 1.8rem;
-		text-decoration-line: underline;
-		text-decoration-style: solid;
-		text-decoration-color: #CCC;
+	}
+
+	.row{
+		width: 100%;
+		margin-bottom: 1em;
+		display: flex;
+		flex-direction: row;
+	}
+	.identification{
+		flex: 1;
+	}
+	.tabs{
+		flex: 1;
+	}
+
+	.identification, .tabs, .tab-content{
+		border: 1px solid #008080; /* TOUTDOUX créer une variable */
+		border-radius: 2em;
+		padding: 1em;
+	}
+
+	.tabs{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.tab-content{
+		width: 100%;
+	}
+	
+	.tab-content > section{
+		display: none;
+	}
+	
+	.tab-content > section:target{
+		display: block;
 	}
 
 </style>
 
 <script>
+	// @ts-check
+
+	/**
+	* @type {import("./main.js").Friche}
+	*/
 	export let descriptionFriche;
 
-	$: fricheEntries = Object.entries(descriptionFriche).filter(([key]) => {
-		return !['ID', 'Heure de début', 'Heure de fin', 'Adresse de messagerie', 'Nom'].includes(key)
-	})
 </script>

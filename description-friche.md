@@ -1,4 +1,5 @@
 ---
+layout: empty
 scripts:
     - src: "./build/bundle.js"
       defer: true
@@ -9,3 +10,11 @@ styles:
 ---
 
 <div class="svelte-main"></div>
+
+<style>
+    main{
+        width: 100%;
+        padding: 0 calc( max(5px, ( 100vw - 100em ) / 2 ));
+    }
+
+</style>
