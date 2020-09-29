@@ -14,45 +14,53 @@ import DescriptionFriche from './DescriptionFriche.svelte';
 
 /**
  * @typedef {object} Friche
+ * @property {string} [id]
  * @property {string} name
  * @property {string} address
  * @property {string} addressComplement
+ * @property {string} communeINSEECode
+ * @property {string} [parcellesCadastrales]
+ * @property {string} [perimeterDescription]
+ * @property {string} [area]
+ * 
  * @property {string} occupancy - Le site est-il occupé ? Site totalement vacant / Occupé en partie de manière temporaire / ... / Pas d'information
+ * @property {string} occupancyDescription
+ * @property {string} currentOccupents
+ * @property {string} currentPublicOwners
+ * @property {string} currentPrivateOwners
+ * @property {string} ownersRelatedRights 
+ * 	
  * @property {string} formerActivity - Quelle est l'ancienne activité du site ?	-
+ * 
  */
 
 /**
- * @param {any}  csvObj
+ * @param {unknown}  csvObj
  * @return {Friche} This is the result
  */
 function makeFriche(csvObj){
 	return {
 		name: csvObj[`Nom du site`],
 		address: csvObj[`Adresse du site`],
+		communeINSEECode: csvObj[`Code INSEE de la commune où se situe le site`],
 		addressComplement: csvObj[`Complément de localisation si besoin`],
+		parcellesCadastrales: csvObj['Numéros des parcelles cadastrales concernées'],
+		perimeterDescription: csvObj[`Description du périmètre de la friche (en attendant qu'on vous invite à le dessiner directement !)`],
+		area: csvObj[`Une idée de la surface globale (m²) ?`],
+
 		occupancy: csvObj[`Le site est-il occupé ?`],
+		occupancyDescription: csvObj[`Description libre de l'occupation éventuelle (normalement question conditionnelle)`],
+		currentOccupents: csvObj[`Nom des éventuels occupants actuels et activité`],
+		currentPublicOwners: csvObj[`Listez les propriétaires publics actuels et leurs droits`],
+		currentPrivateOwners: csvObj[`Listez les propriétaires privés actuels et leurs droits`],
+		ownersRelatedRights: csvObj[`Existe-t-il des droits liés à des propriétaires inconnus ?`],
+		
 		formerActivity: csvObj[`Quelle est l'ancienne activité du site ?`]
 	}
 }
 
 
-/*
-Nom du site	-
-Adresse du site	-
-Complément de localisation si besoin	-
-Code INSEE de la commune où se situe le site	N° INSEE commune
-Numéros des parcelles cadastrales concernées	Parcelles cadastrales
-Description du périmètre de la friche (en attendant qu'on vous invite à le dessiner directement !)	Périmètre
-Une idée de la surface globale (m²) ?	Surface
-Photo	-
-	
-	
-1. Le site est-il occupé ?	-
-2. Description libre de l'occupation éventuelle (normalement question conditionnelle)	-
-3. Nom des éventuels occupants actuels et activité	Occupants actuels
-4. Listez les propriétaires publics actuels et leurs droits	Propriétaires publics actuels
-5. Listez les propriétaires privés actuels et leurs droits	Propriétaires privés actuels
-6. Existe-t-il des droits liés à des propriétaires inconnus ?	-
+/*	
 	
 	
 1. Le site est-il classé ICPE ?	Site ICPE

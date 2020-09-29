@@ -5,6 +5,18 @@
 	<div class="row">
 		<section class="identification">
 			<h2>{descriptionFriche.name}</h2>
+			<h3>Adresse du site</h3>
+			{descriptionFriche.address}
+			<h3>N° INSEE commune</h3>
+			{descriptionFriche.communeINSEECode}
+			<h3>Complément de localisation si besoin</h3>
+			{descriptionFriche.addressComplement}
+			<h3>Parcelles cadastrales</h3>
+			{descriptionFriche.parcellesCadastrales}
+			<h3>Périmètre</h3>
+			{descriptionFriche.perimeterDescription}
+			<h3>Surface</h3>
+			{descriptionFriche.area}m²
 		</section>
 		<section class="tabs">
 			<a href="#occupation">Occupation actuelle et propriété sur le site</a>
@@ -17,6 +29,16 @@
 			<h2>Occupation actuelle et propriété sur le site</h2>
 			<h3>Le site est-il occupé ?</h3>
 			{descriptionFriche.occupancy}
+			<h3>Description libre de l'occupation éventuelle</h3>
+			{descriptionFriche.occupancyDescription}
+			<h3>Occupants actuels</h3>
+			{descriptionFriche.currentOccupents}
+			<h3>Propriétaires publics actuels</h3>
+			{descriptionFriche.currentPublicOwners}
+			<h3>Propriétaires privés actuels</h3>
+			{descriptionFriche.currentPrivateOwners}
+			<h3>Existe-t-il des droits liés à des propriétaires inconnus ?</h3>
+			{descriptionFriche.ownersRelatedRights}
 		</section>
 		<section id="former-activity">
 			<h2>Cessation d’activité</h2>
@@ -77,7 +99,6 @@
 	.tab-content > section:target{
 		display: block;
 	}
-
 </style>
 
 <script>
