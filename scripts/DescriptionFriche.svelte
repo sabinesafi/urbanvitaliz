@@ -187,6 +187,11 @@
 		flex-direction: column;
 	}
 
+	.tabs > *{
+		font-size: 1.1em;
+		padding: 0.5em;
+	}
+
 	.tab-content{
 		width: 100%;
 	}
