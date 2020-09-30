@@ -24,6 +24,7 @@
 			<a href="#artificialisation-archéologie">Nature de l'artificialisation et archéologie</a>
 			<a href="#caractéristiques-du-bâti">Caractéristiques du bâti</a>
 			<a href="#connaissance-de-la-pollution">Connaissance de la pollution</a>
+			<a href="#urbanisme">Urbanisme</a>
 		</section>
 	</div>
 
@@ -116,6 +117,31 @@
 
 			<h3>Documents sur la pollution</h3>
 			{descriptionFriche.pollutionDocuments}
+
+		</section>
+		<section id="urbanisme">
+			<h2>Urbanisme</h2>
+
+			<h3>Zonage PLU(i)</h3>
+			{descriptionFriche.PLUZone}
+			
+			<h3>Une modification du PLU(i) est-elle prévue ?</h3>
+			{descriptionFriche.plannedPLUModification}
+
+			<h3>Contraintes d'urbanisation</h3>
+			{descriptionFriche.urbanisationConstraints}
+
+			<h3>Contexte SCoT, SRADDET</h3>
+			{descriptionFriche.urbanisationLegalDocumentConstraints}
+
+			<h3>Contraintes foncières</h3>
+			{descriptionFriche.propertyConstraints}
+
+			<h3>Sols alentour</h3>
+			{descriptionFriche.surroundingSoilUsage}
+
+			<h3>Tissu urbain alentour</h3>
+			{descriptionFriche.surroundingUrbanContext}
 
 		</section>
 	</section>

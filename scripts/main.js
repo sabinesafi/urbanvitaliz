@@ -58,7 +58,14 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {object} pollution.buildings
  * @property {string} pollutionResearch
  * @property {string} pollutionDocuments
- * 
+ * Urbanisme
+ * @property {string} PLUZone
+ * @property {string} plannedPLUModification
+ * @property {string} urbanisationConstraints
+ * @property {string} urbanisationLegalDocumentConstraints
+ * @property {string} propertyConstraints
+ * @property {string} surroundingSoilUsage
+ * @property {string} surroundingUrbanContext
  * 
  */
 
@@ -121,19 +128,19 @@ function makeFriche(csvObj){
 		},
 		pollutionResearch: csvObj[`En cas de suspicion de pollution, indiquez ici l'état de vos recherches`],
 		pollutionDocuments: csvObj[`En cas de suspicion ou certitude de pollution, disposez-vous de documents ?`],
+
+		PLUZone: csvObj['Quel zonage PLU(i) concerne actuellement le site ?'],
+		plannedPLUModification: csvObj['Une modification du PLU(i) est-elle prévue ?'],
+		urbanisationConstraints: csvObj[`Le site est-il concerné par un périmètre de projet, ZAC, autre contrainte d'urbanisation ?`],
+		urbanisationLegalDocumentConstraints: csvObj[`Les documents d'urbanisme en amont (SCoT, SRADDET) traitent-ils de la réduction de l'artificialisation des terres naturelles et agricoles ? Si oui, précisez l'obligation/recommandation`],
+		propertyConstraints: csvObj[`Le site est-il soumis à des contraintes foncières particulières ?`],
+		surroundingSoilUsage: csvObj[`Types d'usage du sol aux alentours`],
+		surroundingUrbanContext: csvObj[`Type de tissu urbain aux alentours`],
 	}
 }
 
 /*	
 
-Urbanisme																									
-	1. Quel zonage PLU(i) concerne actuellement le site ?	Zonage PLU(i)	 =																						
-	2. Une modification du PLU(i) est-elle prévue ?		Modification prévue / Pas de modification prévue / [autre]	à rapprocher de la réponse précédente																					
-	3. Le site est-il concerné par un périmètre de projet, ZAC, autre contrainte d'urbanisation ?	Contraintes d'urbanisation	 = 																						
-	4. Les documents d'urbanisme en amont (SCoT, SRADDET) traitent-ils de la réduction de l'artificialisation des terres naturelles et agricoles ? Si oui, précisez l'obligation/recommandation	Contexte SCoT, SRADDET 	 =																						
-	5. Le site est-il soumis à des contraintes foncières particulières ?	Contraintes foncières	 =																						
-	6. Types d'usage du sol aux alentours	Sols alentour	Logement / Secondaire / Tertiaire / Naturel/Forestier/Récréatif / Agricole / Pas d'information																						
-	7. Type de tissu urbain aux alentours	Tissu urbain alentour	Pavillonnaire / Dense / Très dense / Non-bâti / Activité lâche / Activité resserrée / Naturel et agricole / [autre]																						
 Risques et caractéristiques naturelles																									
 	1. Le site est-il concerné par un zonage de plan de prévention des risques	Zone PPR	Risque naturel / Risque technologique / Aucun risque / Pas d'information																						
 	2. Si oui, indiquez ici les précisions sur le niveau d'aléa et la part du site touché	-	 = 	A rapprocher de la réponse précédente																					
