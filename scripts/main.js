@@ -72,10 +72,16 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {string} biodiversity
  * @property {string} biodiversityDetails
  * @property {string} naturalConstraints
- * 
+ * Transport et réseaux
+ * @property {string} roadConnectivity
+ * @property {string} closestRailroadStation
+ * @property {string} santitationConnectivity
+ * @property {string} energyConnectivity
+ * @property {string} internetConnectivity
  * 
  * 
  */
+
 
 
 /**
@@ -150,17 +156,17 @@ function makeFriche(csvObj){
 		biodiversity: csvObj[`Que connaissez-vous de la richesse écologique du site ?`],
 		biodiversityDetails: csvObj[`Indiquez ici les précisions concernant la richesse écologique du site`],
 		naturalConstraints:  csvObj[`Le site est-il soumis à des contraintes ou servitudes naturelles ?`],
+
+		roadConnectivity:  csvObj[`Quel est le niveau de desserte routière ?`],
+		closestRailroadStation:  csvObj[`Quelle est la distance à la gare la plus proche ? (en km)`],
+		santitationConnectivity:  csvObj[`Quelle desserte par les réseaux d'assainissement ?`],
+		energyConnectivity:  csvObj[`Quel niveau d'alimentation énergétique est possible ?`],
+		internetConnectivity:  csvObj[`Quel état de  la connectivité ?`],
 	}
 }
 
-/*	
+/*
 																					
-Transport et réseaux																									
-	1. Quel est le niveau de desserte routière ?	Desserte routière	cf questionnaire																						
-	2. Quelle est la distance à la gare la plus proche ? (en km)	Gare la plus proche	 = [km]																						
-	3. Quelle desserte par les réseaux d'assainissement ?	Assainissement	 =																						
-	4. Quel niveau d'alimentation énergétique est possible ?	Alimentation électrique	cf questionnaire																						
-	5. Quel état de  la connectivité ?	Connectivité	 =																						
 Economie et marché																									
 	1. Montant approximatif de la taxe foncière générée actuellement par le site	Taxe foncière actuelle	 = [€]																						
 	2. Quels autres apports financiers le site génère-t-il éventuellement ?	Autres apports financiers éventuels	 =																						

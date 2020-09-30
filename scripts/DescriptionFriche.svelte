@@ -25,7 +25,8 @@
 			<a href="#caractéristiques-du-bâti">Caractéristiques du bâti</a>
 			<a href="#connaissance-de-la-pollution">Connaissance de la pollution</a>
 			<a href="#urbanisme">Urbanisme</a>
-			<a href="#nature">Risques et caractéristiques naturelles</a>	
+			<a href="#nature">Risques et caractéristiques naturelles</a>
+			<a href="#transport-réseaux">Transport et réseaux</a>
 		</section>
 	</div>
 
@@ -161,6 +162,25 @@
 
 			<h3>Contraintes naturelles</h3>
 			{descriptionFriche.naturalConstraints}
+
+		</section>
+		<section id="transport-réseaux">
+			<h2>Transport et réseaux</h2>
+
+			<h3>Desserte routière</h3>
+			{descriptionFriche.roadConnectivity}
+
+			<h3>Gare la plus proche</h3>
+			{descriptionFriche.closestRailroadStation}km
+
+			<h3>Assainissement</h3>
+			{descriptionFriche.santitationConnectivity}
+
+			<h3>Alimentation électrique</h3>
+			{descriptionFriche.energyConnectivity}
+
+			<h3>Connectivité</h3>
+			{descriptionFriche.internetConnectivity}
 
 		</section>
 	</section>
