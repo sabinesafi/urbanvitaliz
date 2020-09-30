@@ -27,6 +27,7 @@
 			<a href="#urbanisme">Urbanisme</a>
 			<a href="#nature">Risques et caractéristiques naturelles</a>
 			<a href="#économie-et-marché">Économie et marché</a>
+			<a href="#projet">Le projet sur le site</a>
 		</section>
 	</div>
 
@@ -197,6 +198,22 @@
 
 			<h3>Prix foncier bâti alentour</h3>
 			{descriptionFriche.averageSurroundingBuiltCost}€/m²
+
+		</section>
+		<section id="projet">
+			<h2>Le projet sur le site</h2>
+
+			<h3>Projet en cours de réalisation</h3>
+			{descriptionFriche.currentProject}
+
+			<h3>Détails</h3>
+			{descriptionFriche.currentProjectDetails}
+
+			<h3>Projet envisagé ou en réflexion</h3>
+			{descriptionFriche.projectPlans}
+
+			<h3>Usages envisagés</h3>
+			{descriptionFriche.plannedUsages}
 
 		</section>
 	</section>

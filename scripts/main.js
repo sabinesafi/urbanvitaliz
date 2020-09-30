@@ -83,7 +83,11 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {string} currentSiteIncomes
  * @property {string} averageSurroundingBuildableCost
  * @property {string} averageSurroundingBuiltCost
- * 
+ * Le projet sur le site
+ * @property {string} currentProject
+ * @property {string} currentProjectDetails
+ * @property {string} projectPlans
+ * @property {string} plannedUsages
  */
 
 /**
@@ -169,18 +173,13 @@ function makeFriche(csvObj){
 		currentSiteIncomes: csvObj[`Quels autres apports financiers le site génère-t-il éventuellement ?`],
 		averageSurroundingBuildableCost: csvObj[`Coût moyen du terrain constructible dans un rayon de 200 m autour du site (euros/m²)`],
 		averageSurroundingBuiltCost: csvObj[`Coût moyen du foncier bâti dans un rayon de 200 m autour du site (euros/m²)`],
+
+		currentProject: csvObj[`Y a-t-il déjà un projet en cours de réalisation sur ce site ?`],
+		currentProjectDetails: csvObj[`Précisions sur cet éventuel projet en cours de réalisation`],
+		projectPlans: csvObj[`Avez-vous un projet envisagé/en réflexion ?`],
+		plannedUsages: csvObj[`Le projet que j'envisage concerne des usages`],
 	}
 }
-
-/*
-																					
-Le projet sur le site																									
-	1. Y a-t-il déjà un projet en cours de réalisation sur ce site ?	Projet en cours de réalisation	cf questionnaire																						
-	2. Précisions sur cet éventuel projet en cours de réalisation	 -	 = 	à rapprocher de la réponse précédente																					
-	3. Avez-vous un projet envisagé/en réflexion ?	Projet envisagé ou en réflexion	cf questionnaire																						
-	4. Le projet que j'envisage concerne des usages :	Usages envisagés	cf questionnaire																						
-
-*/
 
 
 csv('./data/descriptions-friches.csv')
