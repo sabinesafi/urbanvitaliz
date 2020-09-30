@@ -21,7 +21,8 @@
 		<section class="tabs">
 			<a href="#occupation">Occupation actuelle et propriété sur le site</a>
 			<a href="#former-activity">Cessation d’activité</a>
-			<a href="#artificialisation-archéologie">Nature de l'artificialisation et archéologie</a>																																																																																																																																																																																																			
+			<a href="#artificialisation-archéologie">Nature de l'artificialisation et archéologie</a>
+			<a href="#caractéristiques-du-bâti">Caractéristiques du bâti</a>																																																																																																																																																																																																			
 		</section>
 	</div>
 
@@ -73,7 +74,24 @@
 			{descriptionFriche.archelogyObligation}
 			<h3>Est-ce qu'il y a déjà eu des fouilles sur ce site ?</h3>
 			{descriptionFriche.archelogyObligationStatus}
+		</section>
+		<section id="caractéristiques-du-bâti">
+			<h2>Caractéristiques du bâti</h2>
 
+			<h3>Patrimoine architectural</h3>
+			{descriptionFriche.patrimonialStatus}
+			
+			<h3>Surface de plancher</h3>
+			{descriptionFriche.floorArea}%
+
+			<h3>Nombre de niveaux</h3>
+			{descriptionFriche.floors}
+
+			<h3>Etat du bâti</h3>
+			{descriptionFriche.builtQuality}
+
+			<h3>Âge estimé</h3>
+			{descriptionFriche.builtAge}
 		</section>
 	</section>
 </article>

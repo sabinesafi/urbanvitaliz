@@ -44,11 +44,19 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {string} soilTypes
  * @property {string} archelogyObligation
  * @property {string} archelogyObligationStatus
+ * Caractéristiques du bâti
+ * @property {string} patrimonialStatus
+ * @property {string} floorArea
+ * @property {string} floors
+ * @property {string} builtQuality
+ * @property {string} builtAge
+ * 
+ * 
  */
 
 /**
- * @param {unknown}  csvObj
- * @return {Friche} This is the result
+ * @param {unknown} csvObj
+ * @return {Friche} 
  */
 function makeFriche(csvObj){
 	return {
@@ -80,15 +88,16 @@ function makeFriche(csvObj){
 		soilTypes: csvObj[`Sur le site, les sols présents sont de type`],
 		archelogyObligation: csvObj[`Est-ce que le site est soumis à obligation de fouille ?`],
 		archelogyObligationStatus: csvObj[`Est-ce qu'il y a déjà eu des fouilles sur ce site ?`],
+
+		patrimonialStatus: csvObj[`Le bâti a-t-il un aspect patrimonial ?`],
+		floorArea: csvObj[`Surface de plancher (ordre de grandeur)`],
+		floors: csvObj[`Nombre de niveaux`],
+		builtQuality: csvObj[`Etat global du bâti`],
+		builtAge: csvObj[`Age du bâti (approximatif)`],
 	}
 }
 
 /*	
-1. Le bâti a-t-il un aspect patrimonial ?	Patrimoine architectural 
-2. Surface de plancher (ordre de grandeur)	Surface de plancher
-3. Nombre de niveaux	Nombre de niveaux
-4. Etat global du bâti	Etat du bâti
-5. Age du bâti (approximatif)	Âge estimé
 	
 	
 1. Si ce site est ICPE, avez-vous pu récupérer les éléments de connaissance de la pollution auprès de la DREAL ?	-
