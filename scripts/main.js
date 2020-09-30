@@ -78,11 +78,13 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {string} santitationConnectivity
  * @property {string} energyConnectivity
  * @property {string} internetConnectivity
- * 
+ * Economie et marché
+ * @property {string} currentPropertyTax
+ * @property {string} currentSiteIncomes
+ * @property {string} averageSurroundingBuildableCost
+ * @property {string} averageSurroundingBuiltCost
  * 
  */
-
-
 
 /**
  * @param {unknown} csvObj
@@ -162,16 +164,16 @@ function makeFriche(csvObj){
 		santitationConnectivity:  csvObj[`Quelle desserte par les réseaux d'assainissement ?`],
 		energyConnectivity:  csvObj[`Quel niveau d'alimentation énergétique est possible ?`],
 		internetConnectivity:  csvObj[`Quel état de  la connectivité ?`],
+
+		currentPropertyTax: csvObj[`Montant approximatif de la taxe foncière générée actuellement par le site`],
+		currentSiteIncomes: csvObj[`Quels autres apports financiers le site génère-t-il éventuellement ?`],
+		averageSurroundingBuildableCost: csvObj[`Coût moyen du terrain constructible dans un rayon de 200 m autour du site (euros/m²)`],
+		averageSurroundingBuiltCost: csvObj[`Coût moyen du foncier bâti dans un rayon de 200 m autour du site (euros/m²)`],
 	}
 }
 
 /*
 																					
-Economie et marché																									
-	1. Montant approximatif de la taxe foncière générée actuellement par le site	Taxe foncière actuelle	 = [€]																						
-	2. Quels autres apports financiers le site génère-t-il éventuellement ?	Autres apports financiers éventuels	 =																						
-	3. Coût moyen du terrain constructible dans un rayon de 200 m autour du site (euros/m²)	Prix foncier constructible alentour	 = [€/m2]																						
-	4; Coût moyen du foncier bâti dans un rayon de 200 m autour du site (euros/m²)	Prix foncier bâti alentour	 = [€/m2]																						
 Le projet sur le site																									
 	1. Y a-t-il déjà un projet en cours de réalisation sur ce site ?	Projet en cours de réalisation	cf questionnaire																						
 	2. Précisions sur cet éventuel projet en cours de réalisation	 -	 = 	à rapprocher de la réponse précédente																					

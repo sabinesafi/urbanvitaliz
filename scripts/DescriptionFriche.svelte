@@ -26,7 +26,7 @@
 			<a href="#connaissance-de-la-pollution">Connaissance de la pollution</a>
 			<a href="#urbanisme">Urbanisme</a>
 			<a href="#nature">Risques et caractéristiques naturelles</a>
-			<a href="#transport-réseaux">Transport et réseaux</a>
+			<a href="#économie-et-marché">Économie et marché</a>
 		</section>
 	</div>
 
@@ -181,6 +181,22 @@
 
 			<h3>Connectivité</h3>
 			{descriptionFriche.internetConnectivity}
+
+		</section>
+		<section id="économie-et-marché">
+			<h2>Économie et marché</h2>
+
+			<h3>Taxe foncière actuelle</h3>
+			{descriptionFriche.currentPropertyTax}€
+
+			<h3>Autres apports financiers éventuels</h3>
+			{descriptionFriche.currentSiteIncomes}
+
+			<h3>Prix foncier constructible alentour</h3>
+			{descriptionFriche.averageSurroundingBuildableCost}€/m²
+
+			<h3>Prix foncier bâti alentour</h3>
+			{descriptionFriche.averageSurroundingBuiltCost}€/m²
 
 		</section>
 	</section>
