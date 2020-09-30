@@ -25,6 +25,7 @@
 			<a href="#caractéristiques-du-bâti">Caractéristiques du bâti</a>
 			<a href="#connaissance-de-la-pollution">Connaissance de la pollution</a>
 			<a href="#urbanisme">Urbanisme</a>
+			<a href="#nature">Risques et caractéristiques naturelles</a>	
 		</section>
 	</div>
 
@@ -142,6 +143,24 @@
 
 			<h3>Tissu urbain alentour</h3>
 			{descriptionFriche.surroundingUrbanContext}
+		</section>
+		<section id="nature">
+			<h2>Risques et caractéristiques naturelles</h2>
+
+			<h3>Zone PPR</h3>
+			{descriptionFriche.risks}
+			
+			<h3>Précisions sur le niveau d'aléa et la part du site touché</h3>
+			{descriptionFriche.anticipatedRisks}
+
+			<h3>Richesse écologique</h3>
+			{descriptionFriche.biodiversity}
+
+			<h3>Précisions concernant la richesse écologique du site</h3>
+			{descriptionFriche.biodiversityDetails}
+
+			<h3>Contraintes naturelles</h3>
+			{descriptionFriche.naturalConstraints}
 
 		</section>
 	</section>

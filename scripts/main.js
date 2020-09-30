@@ -66,6 +66,14 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {string} propertyConstraints
  * @property {string} surroundingSoilUsage
  * @property {string} surroundingUrbanContext
+ * Risques et caractéristiques naturelles
+ * @property {string} risks
+ * @property {string} anticipatedRisks
+ * @property {string} biodiversity
+ * @property {string} biodiversityDetails
+ * @property {string} naturalConstraints
+ * 
+ * 
  * 
  */
 
@@ -136,18 +144,17 @@ function makeFriche(csvObj){
 		propertyConstraints: csvObj[`Le site est-il soumis à des contraintes foncières particulières ?`],
 		surroundingSoilUsage: csvObj[`Types d'usage du sol aux alentours`],
 		surroundingUrbanContext: csvObj[`Type de tissu urbain aux alentours`],
+
+		risks: csvObj[`Le site est-il concerné par un zonage de plan de prévention des risques`],
+		anticipatedRisks: csvObj[`Si oui, indiquez ici les précisions sur le niveau d'aléa et la part du site touché`],
+		biodiversity: csvObj[`Que connaissez-vous de la richesse écologique du site ?`],
+		biodiversityDetails: csvObj[`Indiquez ici les précisions concernant la richesse écologique du site`],
+		naturalConstraints:  csvObj[`Le site est-il soumis à des contraintes ou servitudes naturelles ?`],
 	}
 }
 
 /*	
-
-Risques et caractéristiques naturelles																									
-	1. Le site est-il concerné par un zonage de plan de prévention des risques	Zone PPR	Risque naturel / Risque technologique / Aucun risque / Pas d'information																						
-	2. Si oui, indiquez ici les précisions sur le niveau d'aléa et la part du site touché	-	 = 	A rapprocher de la réponse précédente																					
-	3. Que connaissez-vous de la richesse écologique du site ?	Richesse écologique	"Zone Natura 2000 / ZNIEFF / Inventaires ou diagnostics locaux effectués / Présence d'une espèce protégée sur le site / [Autre] / Pas d'information
-"																						
-	4. Indiquez ici les précisions concernant la richesse écologique du site	- 	 = 	A rapprocher de la réponse précédente																					
-	5. Le site est-il soumis à des contraintes ou servitudes naturelles ?	Contraintes naturelles	 = 																						
+																					
 Transport et réseaux																									
 	1. Quel est le niveau de desserte routière ?	Desserte routière	cf questionnaire																						
 	2. Quelle est la distance à la gare la plus proche ? (en km)	Gare la plus proche	 = [km]																						
