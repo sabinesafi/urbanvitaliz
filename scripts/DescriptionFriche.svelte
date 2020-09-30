@@ -22,7 +22,8 @@
 			<a href="#occupation">Occupation actuelle et propriété sur le site</a>
 			<a href="#former-activity">Cessation d’activité</a>
 			<a href="#artificialisation-archéologie">Nature de l'artificialisation et archéologie</a>
-			<a href="#caractéristiques-du-bâti">Caractéristiques du bâti</a>																																																																																																																																																																																																			
+			<a href="#caractéristiques-du-bâti">Caractéristiques du bâti</a>
+			<a href="#connaissance-de-la-pollution">Connaissance de la pollution</a>
 		</section>
 	</div>
 
@@ -92,6 +93,30 @@
 
 			<h3>Âge estimé</h3>
 			{descriptionFriche.builtAge}
+		</section>
+		<section id="connaissance-de-la-pollution">
+			<h2>Connaissance de la pollution</h2>
+
+			<h3>Si ce site est ICPE, avez-vous pu récupérer les éléments de connaissance de la pollution auprès de la DREAL ?</h3>
+			{descriptionFriche.pollutionInfoFromDREAL}
+			
+			<h3>Pollutions</h3>
+			<h4>Sols</h4>
+			Pollution : {descriptionFriche.pollution.soil.level}<br>
+			Niveau de confiance : {descriptionFriche.pollution.soil.confidence}
+			<h4>Eaux</h4>
+			Pollution : {descriptionFriche.pollution.water.level}<br>
+			Niveau de confiance : {descriptionFriche.pollution.water.confidence}
+			<h4>Bâtiments</h4>
+			Pollution : {descriptionFriche.pollution.buildings.level}<br>
+			Niveau de confiance : {descriptionFriche.pollution.buildings.confidence}
+
+			<h3>États des recherches</h3>
+			{descriptionFriche.pollutionResearch}
+
+			<h3>Documents sur la pollution</h3>
+			{descriptionFriche.pollutionDocuments}
+
 		</section>
 	</section>
 </article>

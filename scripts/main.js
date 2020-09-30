@@ -50,9 +50,18 @@ import DescriptionFriche from './DescriptionFriche.svelte';
  * @property {string} floors
  * @property {string} builtQuality
  * @property {string} builtAge
+ * Connaissance de la pollution
+ * @property {string} pollutionInfoFromDREAL
+ * @property {object} pollution
+ * @property {object} pollution.soil
+ * @property {object} pollution.water
+ * @property {object} pollution.buildings
+ * @property {string} pollutionResearch
+ * @property {string} pollutionDocuments
  * 
  * 
  */
+
 
 /**
  * @param {unknown} csvObj
@@ -94,18 +103,60 @@ function makeFriche(csvObj){
 		floors: csvObj[`Nombre de niveaux`],
 		builtQuality: csvObj[`Etat global du bâti`],
 		builtAge: csvObj[`Age du bâti (approximatif)`],
+
+		pollutionInfoFromDREAL: csvObj[`Si ce site est ICPE, avez-vous pu récupérer les éléments de connaissance de la pollution auprès de la DREAL ?`],
+		pollution: {
+			soil: {
+				confidence: csvObj['Les sols'],
+				level: csvObj['Les sols2'],
+			},
+			water: {
+				confidence: csvObj['Les eaux'],
+				level: csvObj['Les eaux2'],
+			},
+			buildings: {
+				confidence: csvObj['Les bâtiments'],
+				level: csvObj['Les bâtiments2'],
+			},
+		},
+		pollutionResearch: csvObj[`En cas de suspicion de pollution, indiquez ici l'état de vos recherches`],
+		pollutionDocuments: csvObj[`En cas de suspicion ou certitude de pollution, disposez-vous de documents ?`],
 	}
 }
 
 /*	
-	
-	
-1. Si ce site est ICPE, avez-vous pu récupérer les éléments de connaissance de la pollution auprès de la DREAL ?	-
-2. Votre connaissance de la pollution sur	"Etat des sols
-Etat des eaux
-Etat des bâtiments"
-3. En cas de suspicion ou certitude de pollution, indiquez votre estimation de l'importance de la pollution	
 
+Urbanisme																									
+	1. Quel zonage PLU(i) concerne actuellement le site ?	Zonage PLU(i)	 =																						
+	2. Une modification du PLU(i) est-elle prévue ?		Modification prévue / Pas de modification prévue / [autre]	à rapprocher de la réponse précédente																					
+	3. Le site est-il concerné par un périmètre de projet, ZAC, autre contrainte d'urbanisation ?	Contraintes d'urbanisation	 = 																						
+	4. Les documents d'urbanisme en amont (SCoT, SRADDET) traitent-ils de la réduction de l'artificialisation des terres naturelles et agricoles ? Si oui, précisez l'obligation/recommandation	Contexte SCoT, SRADDET 	 =																						
+	5. Le site est-il soumis à des contraintes foncières particulières ?	Contraintes foncières	 =																						
+	6. Types d'usage du sol aux alentours	Sols alentour	Logement / Secondaire / Tertiaire / Naturel/Forestier/Récréatif / Agricole / Pas d'information																						
+	7. Type de tissu urbain aux alentours	Tissu urbain alentour	Pavillonnaire / Dense / Très dense / Non-bâti / Activité lâche / Activité resserrée / Naturel et agricole / [autre]																						
+Risques et caractéristiques naturelles																									
+	1. Le site est-il concerné par un zonage de plan de prévention des risques	Zone PPR	Risque naturel / Risque technologique / Aucun risque / Pas d'information																						
+	2. Si oui, indiquez ici les précisions sur le niveau d'aléa et la part du site touché	-	 = 	A rapprocher de la réponse précédente																					
+	3. Que connaissez-vous de la richesse écologique du site ?	Richesse écologique	"Zone Natura 2000 / ZNIEFF / Inventaires ou diagnostics locaux effectués / Présence d'une espèce protégée sur le site / [Autre] / Pas d'information
+"																						
+	4. Indiquez ici les précisions concernant la richesse écologique du site	- 	 = 	A rapprocher de la réponse précédente																					
+	5. Le site est-il soumis à des contraintes ou servitudes naturelles ?	Contraintes naturelles	 = 																						
+Transport et réseaux																									
+	1. Quel est le niveau de desserte routière ?	Desserte routière	cf questionnaire																						
+	2. Quelle est la distance à la gare la plus proche ? (en km)	Gare la plus proche	 = [km]																						
+	3. Quelle desserte par les réseaux d'assainissement ?	Assainissement	 =																						
+	4. Quel niveau d'alimentation énergétique est possible ?	Alimentation électrique	cf questionnaire																						
+	5. Quel état de  la connectivité ?	Connectivité	 =																						
+Economie et marché																									
+	1. Montant approximatif de la taxe foncière générée actuellement par le site	Taxe foncière actuelle	 = [€]																						
+	2. Quels autres apports financiers le site génère-t-il éventuellement ?	Autres apports financiers éventuels	 =																						
+	3. Coût moyen du terrain constructible dans un rayon de 200 m autour du site (euros/m²)	Prix foncier constructible alentour	 = [€/m2]																						
+	4; Coût moyen du foncier bâti dans un rayon de 200 m autour du site (euros/m²)	Prix foncier bâti alentour	 = [€/m2]																						
+Le projet sur le site																									
+	1. Y a-t-il déjà un projet en cours de réalisation sur ce site ?	Projet en cours de réalisation	cf questionnaire																						
+	2. Précisions sur cet éventuel projet en cours de réalisation	 -	 = 	à rapprocher de la réponse précédente																					
+	3. Avez-vous un projet envisagé/en réflexion ?	Projet envisagé ou en réflexion	cf questionnaire																						
+	4. Le projet que j'envisage concerne des usages :	Usages envisagés	cf questionnaire																						
 
 */
 
